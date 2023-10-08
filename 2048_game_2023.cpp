@@ -22,7 +22,7 @@ int dirColumn[] = { 0,1,0,-1 }; //ходы из колонны
 //прописываем прототипы функций чтобы использовать их и не думать о их расположении в файле
 pair<int, int>generateUnoccupiedPosition();
 void addPiece();
-
+void newGame();
 
 
 
@@ -48,4 +48,12 @@ void addPiece() {
 }
 
 
-
+//начало новой игры, то есть очищение поля и добавление одного элемента, равного 2
+void newGame() {
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			board[i][j] = 0;
+		}
+	}
+	addPiece();
+}
