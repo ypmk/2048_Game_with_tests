@@ -19,6 +19,14 @@ int dirLine[] = { 1,0,-1,0 }; //ходы из строки
 int dirColumn[] = { 0,1,0,-1 }; //ходы из колонны
 
 
+//прописываем прототипы функций чтобы использовать их и не думать о их расположении в файле
+pair<int, int>generateUnoccupiedPosition();
+void addPiece();
+
+
+
+
+
 //ищем рандомную свбодную позицию на поле
 pair<int, int>generateUnoccupiedPosition() {
 	int occupied = 1, line, column;
@@ -31,4 +39,13 @@ pair<int, int>generateUnoccupiedPosition() {
 	}
 	return make_pair(line, column);
 }
+
+
+//добавляем двоечку на рандомную свободную позицию
+void addPiece() {
+	pair<int, int> pos = generateUnoccupiedPosition();
+	board[pos.first][pos.second] = 2;
+}
+
+
 
