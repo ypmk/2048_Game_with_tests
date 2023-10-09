@@ -24,7 +24,7 @@ pair<int, int>generateUnoccupiedPosition();
 void addPiece();
 void newGame();
 int score();
-
+void exit_game(string s);
 
 
 //ищем рандомную свбодную позицию на поле
@@ -68,4 +68,53 @@ int score() {
 		}
 	}
 	return sum;
+}
+
+
+//функция выхода из игры
+//выход бывает быстрый или после вопроса, уточняющего желание игрока выйти из игры
+void exit_game(string s) {
+	if (s == "fast") {
+		system("cls"); //очищаем экран
+		ifstream file_exit_fast("exit_fast.txt"); //запускаем интерфейс страницы быстрого выхода
+		string str;
+		while (!file_exit_fast.eof()) {
+			getline(file_exit_fast, str);
+			cout << str << endl;
+		}
+		file_exit_fast.close();
+		while (1 == 1) {
+			int key = getch(); //не реагируем на любые нажития клавиш, игра завершена, осталось только закрыь окно нажав на крестик
+			continue;
+		}
+	}
+	else if (s == "ask") {
+		system("cls"); //очищаем экран
+		ifstream file_exit_ask("exit_ask.txt"); //запускаем интерфейс выхода с уточняющим вопросом
+		string str;
+		while (!file_exit_ask.eof()) {
+			getline(file_exit_ask, str);
+			cout << str << endl;
+
+		}
+		file_exit_ask.close();
+
+		while (1 == 1) {
+			int key = getch(); //считываем нажатие клавишей пользователем
+			if (key == 27) { //если пользоователь нажал esc
+				exit_game("fast"); // запускаем функцию быстрого выхода из игры
+				break;
+
+			}
+			else if (key == 75) { //пользователь нажал стрелочку влево, то есть он хочет вернуться к правилам
+				rules(); //запсукаем страницу с правилами
+				break;
+			}
+			else {
+				continue; //другие нажатия клавиш игнорируются
+			}
+		}
+
+	}
+
 }
