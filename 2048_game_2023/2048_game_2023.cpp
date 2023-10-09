@@ -23,7 +23,7 @@ int dirColumn[] = { 0,1,0,-1 }; //ходы из колонны
 pair<int, int>generateUnoccupiedPosition();
 void addPiece();
 void newGame();
-
+int score();
 
 
 
@@ -56,4 +56,16 @@ void newGame() {
 		}
 	}
 	addPiece();
+}
+
+
+//подсчитывание суммы значений элементов, находящихся на поле, то есть получение счета за игру
+int score() {
+	int sum = 0;
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			sum += board[i][j];
+		}
+	}
+	return sum;
 }
