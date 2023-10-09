@@ -25,6 +25,8 @@ void addPiece();
 void newGame();
 int score();
 void exit_game(string s);
+void rules();
+void printUI_first();
 
 
 //ищем рандомную свбодную позицию на поле
@@ -68,6 +70,7 @@ int score() {
 		}
 	}
 	return sum;
+
 }
 
 
@@ -116,5 +119,79 @@ void exit_game(string s) {
 		}
 
 	}
+
+}
+
+
+//функция, переводящая на новую страницу игры, на которой размещены правила игры
+void rules() {
+	system("cls"); //очищаем экрна
+	ifstream file_rules("rules.txt"); //запускаем интерфейс с правилами(выводим текст)
+	string str;
+	while (!file_rules.eof()) {
+		getline(file_rules, str);
+		cout << str << endl;
+
+	}
+	file_rules.close();
+	while (1 == 1) {
+		int key = getch();  //считываем нажатие клавишей пользователем
+		if (key == 75) {//пользователь нажал стрелочку влево, то есть он хочет вернуться в главное меню
+			printUI_first(); //запускаем страницу с главным меню
+			break;
+		}
+		else if (key == 27) { //если пользоователь нажал esc
+			exit_game("ask"); //запускаем функцию длиного выхода, то есть выход с уточняющим вопросом
+			break;
+		}
+		else {
+			continue; //другие нажатия клавиш игнорируются
+		}
+	}
+
+}
+
+
+//функция, отвечающая за первую страницу, которую видит пользователь при начале игры
+void printUI_first() {
+	system("cls"); //очищаем экран
+	ifstream file_first("first.txt"); //выводим начальную страницу
+	string str;
+	while (!file_first.eof()) {
+		getline(file_first, str);
+		cout << str << endl;
+
+	}
+	file_first.close();
+	cout << "\t \t \t";
+	while (1 == 1) {
+		int key = getch();//считываем нажатие клавишей пользователем
+		if (key == 49) { //пользователь нажал 1, то есть хочет прочитать правила
+			rules(); //переходим на страницу с правилами
+			break;
+		}
+		else if (key == 50) { //пользователь нажал 2, то есть хочет начать новую игру
+			newGame(); //функция запуска новой игры
+			game_all();//функция с основными действиями игры
+			break;
+		}
+		else {
+			continue;//другие нажатия клавиш игнорируются
+		}
+	}
+}
+
+
+
+
+
+
+
+
+int main() {
+	setlocale(LC_CTYPE, "RUS"); // подключанм использование русского языка
+	srand(time(0));  //подключаемся ко времени, чтобы сделать рандом настоящим рандомом
+	printUI_first(); //запускаем начальную страницу игры
+
 
 }
