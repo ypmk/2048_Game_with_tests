@@ -19,3 +19,4 @@ int score();
 void exit_game(string s);
 void rules();
 void printUI_first();
+void printUI_game();

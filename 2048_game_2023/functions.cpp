@@ -159,3 +159,25 @@ void printUI_first() {
 		}
 	}
 }
+
+//функция, отвечающая за интерфейс страницы с полем игры
+void printUI_game() {
+	system("cls"); //очищаем экран
+	cout << endl << endl << endl << endl;
+	cout << endl << "\t \t \t " << "     Счёт: " << score() << endl; //выводим на экран счет
+	for (int i = 0; i < 4; i++) {
+		cout << "\t \t \t";
+		for (int j = 0; j < 4; j++) {
+			if (board[i][j] == 0) {
+				cout << setw(4) << "."; //если элемет матрицы равен нулю выводим на поле игра точку
+			}
+			else {
+				cout << setw(4) << board[i][j]; //иначе выводим значение элемента матрицы
+			}
+		}
+		cout << "\n";
+	}
+	cout << endl << endl << endl;
+	cout << "\t \t \t Нажмите:" << endl << "\t \t \t esc - для выхода из игры" << endl << "\t \t \t 1 -вернуться в главное меню" << endl << "\t \t \t 2-начать новую игру" << endl;
+
+}
