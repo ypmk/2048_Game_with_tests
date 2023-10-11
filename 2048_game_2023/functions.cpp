@@ -286,3 +286,35 @@ bool isOver() {
 	}
 	return false;
 }
+
+
+//функция, запускающая интерфейс проигрыша в случае проигрыша
+void over() {
+	ifstream file_over("over.txt");
+	string str;
+	while (!file_over.eof()) {
+		getline(file_over, str);
+		cout << str << endl;
+
+	}
+	file_over.close();
+	while (1 == 1) {
+		int key = getch();
+		if (key == 49) {
+			printUI_first();
+			break;
+		}
+		else if (key == 50) {
+			newGame();
+			game_all();
+			break;
+		}
+		else if (key == 27) {
+			exit_game("fast");
+			break;
+		}
+		else {
+			continue;
+		}
+	}
+}

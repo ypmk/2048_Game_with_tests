@@ -25,5 +25,7 @@ bool isWin(int board[4][4]);
 bool canAddPiece(int board[4][4]);
 void applyMove(int direction);
 bool isOver();
+void over();
 void game_all();
 void Win();
+
