@@ -1,7 +1,24 @@
 #include "pch.h"
 #include "../2048_game_2023/functions.h"
 
-TEST(TestCaseName, TestName) {
-  EXPECT_EQ(1, 1);
-  EXPECT_TRUE(true);
+//Модульные тесты для функции isWin
+
+//Пользователь выиграл
+TEST(IsWinTest, Has2048) {
+	//arrange
+	int win[4][4] = { {2048, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0} };
+	//act
+	bool res = isWin(win);
+	//assert
+	EXPECT_EQ(true, res);
+}
+
+//Пользователь не выиграл
+TEST(IsWinTest, DoesNotHave2048) {
+	//arrange
+	int win[4][4] = { {2, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0} };
+	//act
+	bool res = isWin(win);
+	//assert
+	EXPECT_EQ(false, res);
 }
