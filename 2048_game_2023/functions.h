@@ -22,3 +22,4 @@ void printUI_first();
 void printUI_game();
 bool isWin(int board[4][4]);
 void applyMove(int direction);
+bool canAddPiece(int board[4][4]);

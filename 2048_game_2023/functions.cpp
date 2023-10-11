@@ -230,3 +230,15 @@ void applyMove(int direction) {
 		addPiece();
 	}
 }
+
+//функци€, провер€юща€, есть ли в матрице нулевой элемент, то есть есть ли на поле пустое место, чтобы там по€вилась двойка
+bool canAddPiece(int board[4][4]) {
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (board[i][j] == 0) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
