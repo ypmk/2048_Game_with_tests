@@ -1,2 +1,2 @@
-﻿functions.obj : error LNK2019: ссылка на неразрешенный внешний символ "void __cdecl Win(void)" (?Win@@YAXXZ) в функции "void __cdecl game_all(void)" (?game_all@@YAXXZ).
-C:\Users\Honor\5semester_c\Testirovanie\P3\2048_game_2023\2048_game_2023\Debug\2048_game_2023.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
+﻿  functions.cpp
+  2048_game_2023.vcxproj -> C:\Users\Honor\5semester_c\Testirovanie\P3\2048_game_2023\2048_game_2023\Debug\2048_game_2023.exe
