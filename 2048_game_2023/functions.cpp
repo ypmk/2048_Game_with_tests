@@ -182,6 +182,17 @@ void printUI_game() {
 
 }
 
+
+//функци€, узнающа€ можно ли совершить перемещение
+bool canDoMove(int line, int column, int nextLine, int nextColumn) {
+	if (nextLine < 0 || nextColumn < 0 || nextLine >= 4 || nextColumn >= 4 || board[line][column] != board[nextLine][nextColumn] && board[nextLine][nextColumn] != 0) {
+		return false;
+	}
+	return true;
+}
+
+
+
 //функци€, провер€юща€, не выиграл ли пользователь
 bool isWin(int board[4][4]) {
 	for (int i = 0; i < 4; i++) {
@@ -239,6 +250,39 @@ bool canAddPiece(int board[4][4]) {
 				return true;
 			}
 		}
+	}
+	return false;
+}
+
+
+//функци€, провер€юща€, не проиграл ли игкрок
+bool isOver() {
+	string s;
+	if (canAddPiece(board) == false) {
+		bool over = true;
+		if ((board[0][0] == board[0][1]) || (board[0][0] == board[1][0])) {
+			over = false;
+		}
+		else if ((board[3][0] == board[2][0]) || (board[3][0] == board[3][1])) {
+			over = false;
+		}
+		else if ((board[0][3] == board[0][2]) || (board[0][3] == board[1][3])) {
+			over = false;
+		}
+		else if ((board[3][3] == board[3][2]) || (board[3][3] == board[2][3])) {
+			over = false;
+		}
+		else {
+			for (int i = 1; i < 3; i++) {
+				for (int j = 1; j < 3; j++) {
+					if ((board[i][j] == board[i][j + 1]) || (board[i][j] == board[i][j - 1]) || (board[i][j] == board[i + 1][j]) || (board[i][j] == board[i - 1][j])) {
+						over = false;
+					}
+				}
+			}
+		}
+
+		return over;
 	}
 	return false;
 }

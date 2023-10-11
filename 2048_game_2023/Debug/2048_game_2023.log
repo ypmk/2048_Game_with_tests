@@ -1,0 +1,3 @@
+﻿  functions.cpp
+C:\Users\Honor\5semester_c\Testirovanie\P3\2048_game_2023\2048_game_2023\2048_game_2023\functions.cpp(154,4): error C3861: game_all: идентификатор не найден
+C:\Users\Honor\5semester_c\Testirovanie\P3\2048_game_2023\2048_game_2023\2048_game_2023\functions.cpp(218,24): error C3861: canDoMove: идентификатор не найден
