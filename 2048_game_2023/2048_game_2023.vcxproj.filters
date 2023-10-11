@@ -30,4 +30,27 @@
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="D:\5semester\TestirovanieIAndVerificziaProgrammnogoObespechenia\P3\2048_game\2048_game\exit_ask.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="D:\5semester\TestirovanieIAndVerificziaProgrammnogoObespechenia\P3\2048_game\2048_game\exit_fast.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="D:\5semester\TestirovanieIAndVerificziaProgrammnogoObespechenia\P3\2048_game\2048_game\first.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="D:\5semester\TestirovanieIAndVerificziaProgrammnogoObespechenia\P3\2048_game\2048_game\game.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="D:\5semester\TestirovanieIAndVerificziaProgrammnogoObespechenia\P3\2048_game\2048_game\over.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="D:\5semester\TestirovanieIAndVerificziaProgrammnogoObespechenia\P3\2048_game\2048_game\rules.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="D:\5semester\TestirovanieIAndVerificziaProgrammnogoObespechenia\P3\2048_game\2048_game\win.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

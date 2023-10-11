@@ -146,6 +146,15 @@
     <ClInclude Include="functions.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="D:\5semester\TestirovanieIAndVerificziaProgrammnogoObespechenia\P3\2048_game\2048_game\exit_ask.txt" />
+    <Text Include="D:\5semester\TestirovanieIAndVerificziaProgrammnogoObespechenia\P3\2048_game\2048_game\exit_fast.txt" />
+    <Text Include="D:\5semester\TestirovanieIAndVerificziaProgrammnogoObespechenia\P3\2048_game\2048_game\first.txt" />
+    <Text Include="D:\5semester\TestirovanieIAndVerificziaProgrammnogoObespechenia\P3\2048_game\2048_game\game.txt" />
+    <Text Include="D:\5semester\TestirovanieIAndVerificziaProgrammnogoObespechenia\P3\2048_game\2048_game\over.txt" />
+    <Text Include="D:\5semester\TestirovanieIAndVerificziaProgrammnogoObespechenia\P3\2048_game\2048_game\rules.txt" />
+    <Text Include="D:\5semester\TestirovanieIAndVerificziaProgrammnogoObespechenia\P3\2048_game\2048_game\win.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

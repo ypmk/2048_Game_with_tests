@@ -318,3 +318,123 @@ void over() {
 		}
 	}
 }
+
+
+//функция, отвечающая за работу самой игры 2048
+void game_all() {
+	int commandToDir[128];
+	commandToDir[80] = 0; //вниз
+	commandToDir[77] = 1; //вправо
+	commandToDir[72] = 2; //вверх
+	commandToDir[75] = 3; //влево
+	while (1 == 1) {
+		system("cls"); //очищение экрана
+		cout << endl << endl << endl;
+		cout << "\t\t" << "   Нажмите любую стрелочку для начала" << endl;
+		cout << endl << "\t \t \t " << "     Счёт: " << score() << endl; //вывод на экран счета игкрока в этой игре
+		for (int i = 0; i < 4; i++) {
+			cout << "\t \t \t";
+			for (int j = 0; j < 4; j++) {
+				if (board[i][j] == 0) {
+					cout << setw(4) << "."; //если в матрице элемент равен нулю, то на этом месте в поле игры отображается точка
+				}
+				else {
+					cout << setw(4) << board[i][j]; //иначе выводим значение элемента матрицы
+				}
+			}
+			cout << "\n";
+		}
+		ifstream file_game("game.txt"); //показываем интерфейс игры
+		string str;
+		while (!file_game.eof()) {
+			getline(file_game, str);
+			cout << str << endl;
+
+		}
+		file_game.close();
+
+		int command = getch(); //считывание нажатия клавиш пользователем
+
+		if (command == 80 || command == 77 || command == 75 || command == 72) {
+			int currentDirection = commandToDir[command];
+			applyMove(currentDirection);
+			break;
+		}
+		else if (command == 50) {//клавиша 2
+			newGame();
+			game_all();
+			break;
+		}
+		else if (command == 27) {//клавиша esc
+			exit_game("fast");
+			break;
+		}
+		else if (command == 49) {//клавиша 1
+			cout << "\t \t \t Данные этого раунда не сохранятся, уверены, что хотите перейти в главное меню ?" << endl;
+			cout << "\t \t \t 1 - Покинуть игру" << endl << "\t \t \t 2 - остаться" << endl;
+			while (1 == 1) {
+				int k = getch();
+				if (k == 49) { //если пользователь нажал 1, значит хочет вернуться в главное меню
+					printUI_first(); //переходим на страницу главного меню
+					break;
+				}
+				else if (k == 50) {//если пользователь нажал 2, то он хочет остаться
+					break;
+				}
+				else {
+					continue; //другие нажатия клавиш игнорируются
+				}
+			}
+		}
+		else {
+			continue;
+		}
+	}
+	while (true) {
+		printUI_game(); //показываем интерфейс игры
+		if (isWin(board) == true) { //проеряем, не выиграл ли игрок
+			Win();
+			break;
+		}
+		if (isOver() == true) {//проверяем, не проиграл ли игкрок
+			over();
+			break;
+		}
+
+		int command = getch(); //считываем нажатия клавиш пользователем
+
+		if (command == 80 || command == 77 || command == 75 || command == 72) {
+			int currentDirection = commandToDir[command];
+			applyMove(currentDirection);
+		}
+		else if (command == 50) {//n
+			newGame();
+		}
+		else if (command == 27) {//esc
+			exit_game("ask");
+			break;
+		}
+		else if (command == 49) {//esc
+			cout << "\t \t \t Данные этого раунда не сохранятся, уверены, что хотите перейти в главное меню ?" << endl;
+			cout << "\t \t \t 1 - Покинуть игру" << endl << "\t \t \t 2 - остаться" << endl;
+			while (1 == 1) {
+				int k = getch(); //считываем нажатия клавиш пользователем
+				if (k == 49) { //пользователь нажал 1, значит хочет вернуться в главное меню
+					printUI_first(); //запускаем страницу главного меню
+					break;
+				}
+				else if (k == 50) {//пользователь нажал 2, значит хочет остаться
+					break;
+				}
+				else {
+					continue;//другие нажатия клавиш игнорируются
+				}
+			}
+		}
+		else {
+			continue;
+		}
+	}
+
+	system("pause");
+}
