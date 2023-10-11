@@ -1,0 +1,5 @@
+﻿  2048_game_2023.cpp
+C:\Users\Lisa\Desktop\2048\2048_game_2023\2048_game_2023.cpp(8,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  functions.cpp
+C:\Users\Lisa\Desktop\2048\2048_game_2023\functions.cpp(154,4): error C3861: 'game_all': identifier not found
+  Generating Code...

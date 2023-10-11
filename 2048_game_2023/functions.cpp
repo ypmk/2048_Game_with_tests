@@ -181,3 +181,52 @@ void printUI_game() {
 	cout << "\t \t \t Нажмите:" << endl << "\t \t \t esc - для выхода из игры" << endl << "\t \t \t 1 -вернуться в главное меню" << endl << "\t \t \t 2-начать новую игру" << endl;
 
 }
+
+//функция, проверяющая, не выиграл ли пользователь
+bool isWin(int board[4][4]) {
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (board[i][j] == 2048) {
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
+//функция, совершающая передвижение элемента по полю
+void applyMove(int direction) {
+	int startLine = 0, startColumn = 0, LineStep = 1, columnStep = 1;
+
+	if (direction == 0) {
+		startLine = 3;
+		LineStep = -1;
+	}
+	if (direction == 1) {
+		startColumn = 3;
+		columnStep = -1;
+	}
+	bool stop = false;
+	int movePossible = 0, canAddPiece = 0;
+	do {
+		movePossible = 0;
+		for (int i = startLine; i >= 0 && i < 4; i += LineStep) {
+			for (int j = startColumn; j >= 0 && j < 4; j += columnStep) {
+				int nextI = i + dirLine[direction];
+				int nextJ = j + dirColumn[direction];
+				if (board[i][j] && canDoMove(i, j, nextI, nextJ)) {
+					board[nextI][nextJ] += board[i][j];
+					board[i][j] = 0;
+					movePossible = 1;
+					canAddPiece = 1;
+				}
+			}
+		}
+		printUI_game();
+	} while (movePossible);
+
+	if (canAddPiece) {
+		addPiece();
+	}
+}

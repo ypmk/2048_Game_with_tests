@@ -20,3 +20,5 @@ void exit_game(string s);
 void rules();
 void printUI_first();
 void printUI_game();
+bool isWin(int board[4][4]);
+void applyMove(int direction);
