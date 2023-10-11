@@ -1,4 +1,6 @@
 #pragma once
+
+#include "pch.h"
 #include<iostream>  //подключаем необходимые библиотеки
 #include<ctime>
 #include<cstdlib>

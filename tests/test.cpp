@@ -24,6 +24,7 @@ TEST(IsWinTest, DoesNotHave2048) {
 	EXPECT_EQ(false, res);
 }
 
+
 //Сценарии для функции canAddPiece
 FEATURE("Pieces can be added on an empty space") {
 	//AS_A developer

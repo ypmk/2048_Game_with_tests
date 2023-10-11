@@ -2,6 +2,9 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
+      <FullPath>C:\Users\Lisa\Desktop\2048\x64\Debug\2048_game_2023.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
       <FullPath>C:\Users\Lisa\Desktop\2048\x64\Debug\tests.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>

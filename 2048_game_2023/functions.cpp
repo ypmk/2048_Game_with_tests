@@ -1,5 +1,8 @@
-#include "functions.h"
+
+
 #pragma warning(disable:4996)//отключаем предупреждение компил€тора чтобы использовать getch()
+#include "pch.h"
+#include "functions.h"
 
 
 int board[4][4]; //создаем матрицу дл€ пол€ игры
