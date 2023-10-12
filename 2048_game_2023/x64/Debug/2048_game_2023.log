@@ -1,5 +1,2 @@
-﻿  2048_game_2023.cpp
-C:\Users\Lisa\Desktop\2048\2048_game_2023\2048_game_2023.cpp(8,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  functions.cpp
-  Generating Code...
-  2048_game_2023.vcxproj -> C:\Users\Lisa\Desktop\2048\x64\Debug\2048_game_2023.exe
+﻿  functions.cpp
+  2048_game_2023.vcxproj -> C:\Users\Honor\5semester_c\Testirovanie\P3\2048_game_2023\2048_game_2023\x64\Debug\2048_game_2023.exe

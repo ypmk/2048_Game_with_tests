@@ -44,7 +44,7 @@ void newGame() {
 
 
 //подсчитывание суммы значений элементов, находящихся на поле, то есть получение счета за игру
-int score() {
+int score(int board[4][4]) {
 	int sum = 0;
 	for (int i = 0; i < 4; i++) {
 		for (int j = 0; j < 4; j++) {
@@ -167,7 +167,7 @@ void printUI_first() {
 void printUI_game() {
 	system("cls"); //очищаем экран
 	cout << endl << endl << endl << endl;
-	cout << endl << "\t \t \t " << "     Счёт: " << score() << endl; //выводим на экран счет
+	cout << endl << "\t \t \t " << "     Счёт: " << score(board) << endl; //выводим на экран счет
 	for (int i = 0; i < 4; i++) {
 		cout << "\t \t \t";
 		for (int j = 0; j < 4; j++) {
@@ -200,7 +200,7 @@ bool canDoMove(int line, int column, int nextLine, int nextColumn) {
 bool isWin(int board[4][4]) {
 	for (int i = 0; i < 4; i++) {
 		for (int j = 0; j < 4; j++) {
-			if (board[i][j] == 2048) {
+			if (board[i][j] == 32) {
 				return true;
 			}
 		}
@@ -369,7 +369,7 @@ void game_all() {
 		system("cls"); //очищение экрана
 		cout << endl << endl << endl;
 		cout << "\t\t" << "   Нажмите любую стрелочку для начала" << endl;
-		cout << endl << "\t \t \t " << "     Счёт: " << score() << endl; //вывод на экран счета игкрока в этой игре
+		cout << endl << "\t \t \t " << "     Счёт: " << score(board) << endl; //вывод на экран счета игкрока в этой игре
 		for (int i = 0; i < 4; i++) {
 			cout << "\t \t \t";
 			for (int j = 0; j < 4; j++) {

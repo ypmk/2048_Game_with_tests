@@ -17,7 +17,7 @@ using namespace std;
 pair<int, int>generateUnoccupiedPosition();
 void addPiece();
 void newGame();
-int score();
+int score(int board[4][4]);
 void exit_game(string s);
 void rules();
 void printUI_first();
