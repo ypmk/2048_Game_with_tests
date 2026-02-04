@@ -32,7 +32,7 @@
 ### Проигрыш
 <img width="934" height="516" alt="image" src="https://github.com/user-attachments/assets/42b0403d-95f5-4cca-8eb6-99710b80cf2b" />
 
-### Победа (Для демонстрации счетчик победы был установлен на 64)
+### Победа (для демонстрации счетчик победы был установлен на 64)
 <img width="924" height="517" alt="image" src="https://github.com/user-attachments/assets/c749aec5-913b-41e1-9029-b1854e5a31a5" />
 
 ### Подтверждение выхода
